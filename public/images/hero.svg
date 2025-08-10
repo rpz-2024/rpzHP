@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e6c69f"/>
+      <stop offset="100%" stop-color="#b78a62"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <circle cx="280" cy="200" r="90" fill="#FFF" opacity="0.2"/>
+  <rect x="720" y="260" width="360" height="200" rx="24" fill="#fff" opacity="0.15"/>
+  <text x="50%" y="60%" font-family="'Noto Serif JP', serif" font-size="48" text-anchor="middle" fill="#ffffff" opacity="0.9">季節の料理とお酒</text>
+</svg>

@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+@theme {
+	--color-kinari: #fbf5ef;
+	--color-text: #2a2a2a;
+	--color-subtext: #666666;
+	--color-red: #d30000;
+	--color-line: #e9e3db;
+
+	--radius-lg: 24px;
+	--radius-md: 14px;
+}
+
+:root {
+	color-scheme: light;
+}
+
+html,
+body {
+	background: var(--color-kinari);
+	color: var(--color-text);
+	min-height: 100vh; /* Tailwind's min-h-screen equivalent in base CSS */
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	margin: 0;
+}
+
+.font-sans {
+	font-family:
+		var(--font-sans),
+		system-ui,
+		-apple-system,
+		Segoe UI,
+		Roboto,
+		Noto Sans JP,
+		sans-serif;
+}
+.font-serif {
+	font-family: var(--font-serif), "Noto Serif JP", serif;
+}
+
+/* Utilities */
+.shadow-soft {
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Vertical headings */
+.vertical-title {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	letter-spacing: 0.15em;
+}
+
+@media (max-width: 640px) {
+	.vertical-title {
+		writing-mode: horizontal-tb;
+		text-orientation: mixed;
+	}
+}
+
+/* Vertical writing utility for rail titles */
+.writing-vertical {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+/* Focus ring visible */
+:where(a, button, [role="button"]) {
+	outline-offset: 3px;
+}
+
+/* Hamburger -> X animation */
+.hamburger {
+	width: 28px;
+	height: 20px;
+	position: relative;
+	display: inline-block;
+}
+.hamburger::before,
+.hamburger::after,
+.hamburger i {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: #fff;
+	transition:
+		transform 0.25s ease,
+		opacity 0.2s ease;
+}
+.hamburger i {
+	top: 9px;
+}
+.hamburger::before {
+	top: 0;
+}
+.hamburger::after {
+	bottom: 0;
+}
+.hamburger.is-open i {
+	opacity: 0;
+}
+.hamburger.is-open::before {
+	transform: translateY(9px) rotate(45deg);
+}
+.hamburger.is-open::after {
+	transform: translateY(-9px) rotate(-45deg);
+}

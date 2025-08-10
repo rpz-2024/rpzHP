@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="160" viewBox="0 0 64 160">
+  <rect width="64" height="160" rx="12" fill="#FBF5EF"/>
+  <g fill="#D30000" font-family="'Noto Serif JP', serif" font-weight="600" font-size="20" text-anchor="middle">
+    <text x="32" y="40">五</text>
+    <text x="32" y="80">十</text>
+    <text x="32" y="120">棲</text>
+  </g>
+</svg>
