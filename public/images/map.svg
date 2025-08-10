@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#e9e3db"/>
+  <g stroke="#b9b2a7" stroke-width="2" fill="none">
+    <path d="M30 100 H1170"/>
+    <path d="M30 200 H1170"/>
+    <path d="M30 300 H1170"/>
+    <path d="M30 400 H1170"/>
+    <path d="M30 500 H1170"/>
+  </g>
+  <circle cx="600" cy="340" r="14" fill="#D30000"/>
+  <text x="620" y="346" font-family="'Noto Sans JP', sans-serif" font-size="18" fill="#333">五十棲</text>
+</svg>
