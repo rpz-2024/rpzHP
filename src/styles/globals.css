@@ -21,8 +21,17 @@ body {
 	color: var(--color-text);
 	min-height: 100vh; /* Tailwind's min-h-screen equivalent in base CSS */
 	overflow-x: hidden;
-	scroll-behavior: smooth;
 	margin: 0;
+}
+
+/* Global smooth scroll except when user prefers reduced motion */
+html {
+	scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 .font-sans {

@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 
 const items = [
-	{ id: "hero", label: "トップ" },
 	{ id: "intro", label: "ごあいさつ" },
 	{ id: "gallery", label: "店内" },
 	{ id: "food", label: "食と飲み物" },
@@ -14,6 +13,13 @@ const SidePillNavMobile = () => {
 	const [open, setOpen] = useState(false);
 	const firstBtnRef = useRef<HTMLAnchorElement | null>(null);
 	const panelRef = useRef<HTMLDivElement | null>(null);
+
+	// Listen for external trigger, manage focus/scroll lock when open
+	useEffect(() => {
+		const onToggle = () => setOpen((v) => !v);
+		window.addEventListener("toggle-mobile-menu", onToggle);
+		return () => window.removeEventListener("toggle-mobile-menu", onToggle);
+	}, []);
 
 	// Focus first item, close on Esc, and lock body scroll while open
 	useEffect(() => {
@@ -40,27 +46,21 @@ const SidePillNavMobile = () => {
 			}
 		};
 		window.addEventListener("keydown", onKey);
+		window.dispatchEvent(
+			new CustomEvent("mobile-menu-open-changed", { detail: true }),
+		);
 		return () => {
 			document.body.style.overflow = prev;
 			window.removeEventListener("keydown", onKey);
+			window.dispatchEvent(
+				new CustomEvent("mobile-menu-open-changed", { detail: false }),
+			);
 			clearTimeout(t);
 		};
 	}, [open]);
 
 	return (
 		<>
-			<button
-				type="button"
-				aria-label={open ? "メニューを閉じる" : "メニューを開く"}
-				aria-expanded={open}
-				aria-controls="mobile-menu"
-				onClick={() => setOpen((v) => !v)}
-				className="fixed top-4 right-4 z-[100] grid h-11 w-11 place-items-center rounded-full bg-red text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red lg:hidden"
-			>
-				<span aria-hidden className={`hamburger ${open ? "is-open" : ""}`}>
-					<i></i>
-				</span>
-			</button>
 			{/* Fullscreen overlay + panel (left gap zero) */}
 			<div
 				id="mobile-menu"
@@ -96,15 +96,18 @@ const SidePillNavMobile = () => {
 								href={`#${i.id}`}
 								ref={idx === 0 ? firstBtnRef : undefined}
 								onClick={(e) => {
+									const href = (
+										e.currentTarget.getAttribute("href") || ""
+									).trim();
+									if (!href.startsWith("#")) return;
+									const id = href.slice(1);
+									const el = document.getElementById(id);
+									if (!el) return;
 									e.preventDefault();
 									setOpen(false);
-									const el = document.getElementById(i.id);
-									if (!el) return;
+									// wait a tick to allow overlay close/layout, then scroll
 									setTimeout(() => {
 										el.scrollIntoView({ behavior: "smooth", block: "start" });
-										try {
-											window.scrollBy({ top: -16, behavior: "auto" });
-										} catch {}
 									}, 10);
 								}}
 								className="h-12 rounded-full bg-red px-6 text-white shadow-sm transition hover:brightness-110 active:brightness-90 tracking-wide grid place-items-center w-full max-w-[360px]"

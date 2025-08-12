@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import { smoothScrollToTop } from "@/lib/smooth";
 
 type Item = { id: string; label: string };
 
@@ -44,13 +45,7 @@ const SidePillNav = () => {
 			<button
 				type="button"
 				aria-label="ページの先頭へ"
-				onClick={() => {
-					try {
-						window.scrollTo({ top: 0, behavior: "smooth" });
-					} catch {
-						window.scrollTo(0, 0);
-					}
-				}}
+				onClick={() => smoothScrollToTop(900)}
 				className="mb-4 select-none text-center font-serif text-xl font-semibold text-red focus:outline-none focus-visible:outline-red cursor-pointer"
 			>
 				五十棲
@@ -60,15 +55,13 @@ const SidePillNav = () => {
 					key={item.id}
 					href={`#${item.id}`}
 					onClick={(e) => {
-						e.preventDefault();
-						const el = document.getElementById(item.id);
+						const href = (e.currentTarget.getAttribute("href") || "").trim();
+						if (!href.startsWith("#")) return;
+						const id = href.slice(1);
+						const el = document.getElementById(id);
 						if (!el) return;
+						e.preventDefault();
 						el.scrollIntoView({ behavior: "smooth", block: "start" });
-						setTimeout(() => {
-							try {
-								window.scrollBy({ top: -16, behavior: "auto" });
-							} catch {}
-						}, 320);
 					}}
 					className={`w-full h-[64px] flex items-center justify-center text-center rounded-full bg-red px-6 leading-tight text-lg md:text-xl font-bold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red ${
 						active === item.id ? "ring-2 ring-red/40 shadow-soft" : ""

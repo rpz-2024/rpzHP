@@ -1,11 +1,10 @@
 import "@/styles/globals.css";
-import type { Metadata } from "next";
 
 type RootLayoutProps = {
 	children: React.ReactNode;
 };
 
-export const metadata: Metadata = {
+export const metadata = {
 	metadataBase: new URL("https://example.com"),
 	title: {
 		default: "五十棲 | 季節の料理とお酒",
