@@ -9,7 +9,7 @@ const Access = () => {
 			</div>
 			<div
 				id="access"
-				className="lg:col-start-3 pt-12 pb-0 scroll-mt-28 lg:scroll-mt-32 relative z-10 overflow-visible"
+				className="lg:col-start-3 pt-12 pb-10 md:pb-14 lg:pb-20 scroll-mt-28 lg:scroll-mt-32 relative z-10 overflow-visible"
 			>
 				<div className="relative mb-8 leading-none">
 					<iframe
@@ -34,7 +34,7 @@ const Access = () => {
 						<div>〒000-0000 東京都〇〇区〇〇 0-0-0</div>
 						<div>営業時間 17:00-23:00（L.O. 22:00）/ 定休 火</div>
 						<div>TEL 03-1234-5678</div>
-						<div className="pt-2">
+						<div className="pt-2 mb-10 md:mb-14 lg:mb-20">
 							<a
 								href="/"
 								className="inline-flex items-center gap-2 rounded-full bg-red px-6 py-2.5 text-base font-semibold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"

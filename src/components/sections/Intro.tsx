@@ -24,19 +24,19 @@ const Intro = () => {
 						priority
 					/>
 				</div>
-				<div className="grid gap-6 md:grid-cols-5 md:items-start">
-					<div className="md:col-span-3">
+				<div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 md:items-start">
+					<div className="lg:col-span-7">
 						<div className="relative aspect-[3/2] overflow-hidden rounded-3xl shadow-md md:shadow-lg">
 							<Image
 								src="/images/intro.svg"
 								alt="店内の風景"
 								fill
-								sizes="(max-width: 1024px) 100vw, 720px"
 								className="object-cover"
+								sizes="(max-width:768px) 100vw, (max-width:1280px) 90vw, 1760px"
 							/>
 						</div>
 					</div>
-					<div className="md:col-span-2 md:pl-8">
+					<div className="lg:col-span-5 md:mt-2 lg:mt-0 lg:pl-8">
 						<h2 className="mb-2 font-serif text-xl font-bold">
 							五十棲について
 						</h2>

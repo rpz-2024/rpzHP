@@ -1,58 +1,19 @@
-const prefersReduced = () =>
-	typeof window !== "undefined" &&
-	window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+"use client";
 
-const easeOutBack = (t: number) => {
-	// Reduced overshoot to minimize bounce
-	const c1 = 0.6;
-	const c3 = c1 + 1;
-	return 1 + c3 * (t - 1) ** 3 + c1 * (t - 1) ** 2;
-};
-
-export function scrollToTopWithOvershoot(duration = 600) {
-	if (typeof window === "undefined") return;
-	if (prefersReduced()) {
+// Smooth scroll to top with prefers-reduced-motion support and easeOutCubic.
+export function smoothScrollToTop(duration = 700) {
+	if (window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) {
 		window.scrollTo({ top: 0 });
 		return;
 	}
 	const start = window.scrollY || window.pageYOffset;
-	const startTime = performance.now();
-
-	const animate = (now: number) => {
-		const elapsed = now - startTime;
-		const t = Math.min(1, elapsed / duration);
-		const eased = easeOutBack(t);
-		// Clamp final position to 0 to avoid negative overshoot
-		const next = Math.round(start * (1 - eased));
-		const y = Math.max(0, next);
+	const t0 = performance.now();
+	const ease = (t: number) => 1 - (1 - t) ** 3; // easeOutCubic
+	function frame(now: number) {
+		const p = Math.min(1, (now - t0) / duration);
+		const y = Math.round(start * (1 - ease(p)));
 		window.scrollTo(0, y);
-		if (t < 1 && y > 0) requestAnimationFrame(animate);
-	};
-	requestAnimationFrame(animate);
-}
-
-export function scrollToId(id: string, duration = 700) {
-	if (typeof window === "undefined") return;
-	const el = document.getElementById(id);
-	if (!el) return;
-	if (prefersReduced()) {
-		el.scrollIntoView({ block: "start" });
-		return;
+		if (p < 1) requestAnimationFrame(frame);
 	}
-	const start = window.scrollY || window.pageYOffset;
-	const rect = el.getBoundingClientRect();
-	const target = rect.top + start - 24; // slight offset
-	const dist = target - start;
-	const startTime = performance.now();
-
-	const step = (now: number) => {
-		const elapsed = now - startTime;
-		const t = Math.min(1, elapsed / duration);
-		const eased = easeOutBack(t);
-		const y = Math.round(start + dist * eased);
-		window.scrollTo(0, y);
-		if (t < 1) requestAnimationFrame(step);
-	};
-
-	requestAnimationFrame(step);
+	requestAnimationFrame(frame);
 }

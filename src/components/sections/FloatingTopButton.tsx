@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { scrollToTopWithOvershoot } from "@/lib/scroll";
+import { scrollTopInstant } from "@/lib/scrollTopInstant";
 
 const FloatingTopButton = () => {
 	const ref = useRef<HTMLButtonElement | null>(null);
@@ -31,7 +31,7 @@ const FloatingTopButton = () => {
 			type="button"
 			ref={ref}
 			aria-label="ページの先頭へ戻る"
-			onClick={() => scrollToTopWithOvershoot()}
+			onClick={scrollTopInstant}
 			className="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-red text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
 		>
 			↑
