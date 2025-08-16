@@ -1,7 +1,9 @@
 import Image from "next/image";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
+import type { ReactElement } from "react";
 
-const Access = () => {
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
+
+export function Access(): ReactElement {
 	return (
 		<section className="lg:contents">
 			<div className="hidden lg:block lg:col-start-2">
@@ -9,7 +11,7 @@ const Access = () => {
 			</div>
 			<div
 				id="access"
-				className="lg:col-start-3 pt-12 pb-10 md:pb-14 lg:pb-20 scroll-mt-28 lg:scroll-mt-32 relative z-10 overflow-visible"
+				className="lg:col-start-3 pt-12 pb-10 md:pb-14 lg:pb-20 scroll-mt-28 lg:scroll-mt-32 relative z-10"
 			>
 				<div className="relative mb-8 leading-none">
 					<iframe
@@ -27,6 +29,7 @@ const Access = () => {
 							alt="五十棲ロゴ"
 							width={40}
 							height={100}
+							className="w-auto h-auto"
 						/>
 					</div>
 					<div className="space-y-1">
@@ -37,7 +40,7 @@ const Access = () => {
 						<div className="pt-2 mb-10 md:mb-14 lg:mb-20">
 							<a
 								href="/"
-								className="inline-flex items-center gap-2 rounded-full bg-red px-6 py-2.5 text-base font-semibold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
+								className="inline-flex items-center gap-2 rounded-full bg-[#D30000] px-6 py-2.5 text-base font-semibold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
 							>
 								WEB予約はこちら
 							</a>
@@ -47,6 +50,4 @@ const Access = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Access;
+}

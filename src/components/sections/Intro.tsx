@@ -1,7 +1,9 @@
 import Image from "next/image";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
+import type { ReactElement } from "react";
 
-const Intro = () => {
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
+
+export function Intro(): ReactElement {
 	return (
 		<section className="lg:contents">
 			<div className="hidden lg:block lg:col-start-2">
@@ -9,7 +11,7 @@ const Intro = () => {
 			</div>
 			<div
 				id="intro"
-				className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10 overflow-visible"
+				className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10"
 			>
 				<div className="lg:hidden block text-red-700 font-extrabold text-2xl md:text-3xl mt-6 mb-3">
 					ごあいさつ
@@ -20,7 +22,7 @@ const Intro = () => {
 						alt="五十棲 ロゴ"
 						width={76}
 						height={176}
-						className="opacity-90"
+						className="opacity-90 w-auto h-auto"
 						priority
 					/>
 				</div>
@@ -48,6 +50,4 @@ const Intro = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Intro;
+}

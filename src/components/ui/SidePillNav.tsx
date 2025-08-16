@@ -1,10 +1,13 @@
 "use client";
+
+import type { ReactElement } from "react";
 import { useEffect, useMemo, useState } from "react";
+
 import { smoothScrollToTop } from "@/lib/smooth";
 
-type Item = { id: string; label: string };
+type NavigationItem = { id: string; label: string };
 
-const items: Item[] = [
+const NAVIGATION_ITEMS: NavigationItem[] = [
 	{ id: "intro", label: "ごあいさつ" },
 	{ id: "gallery", label: "店内" },
 	{ id: "food", label: "食と飲み物" },
@@ -12,7 +15,7 @@ const items: Item[] = [
 	{ id: "access", label: "アクセス" },
 ];
 
-const SidePillNav = () => {
+export function SidePillNav(): ReactElement {
 	const [active, setActive] = useState<string>("intro");
 
 	const observer = useMemo(() => {
@@ -29,7 +32,7 @@ const SidePillNav = () => {
 
 	useEffect(() => {
 		if (!observer) return;
-		const ids = items.map((i) => i.id);
+		const ids = NAVIGATION_ITEMS.map((item) => item.id);
 		const els = ids
 			.map((id) => document.getElementById(id))
 			.filter(Boolean) as Element[];
@@ -50,7 +53,7 @@ const SidePillNav = () => {
 			>
 				五十棲
 			</button>
-			{items.map((item) => (
+			{NAVIGATION_ITEMS.map((item) => (
 				<a
 					key={item.id}
 					href={`#${item.id}`}
@@ -72,6 +75,4 @@ const SidePillNav = () => {
 			))}
 		</nav>
 	);
-};
-
-export default SidePillNav;
+}

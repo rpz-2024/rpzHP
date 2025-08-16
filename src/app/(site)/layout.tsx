@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import type { PropsWithChildren } from "react";
+
 import "@/styles/globals.css";
-import HeaderMobile from "@/components/header/HeaderMobile";
-import Footer from "@/components/sections/Footer";
-import Sidebar from "@/components/sidebar/Sidebar";
+import { Footer } from "@/components/layout/Footer";
+import { HeaderMobile } from "@/components/layout/HeaderMobile";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { GlobalNavMobileTrigger } from "@/components/ui/GlobalNavMobileTrigger";
+import { SidePillNavMobile } from "@/components/ui/SidePillNavMobile";
 
 const sans = Noto_Sans_JP({
 	subsets: ["latin"],
@@ -23,25 +27,23 @@ export const metadata: Metadata = {
 	title: "五十棲 | 季節の料理とお酒",
 };
 
-type Props = { children: React.ReactNode };
-
-const SiteLayout = ({ children }: Props) => {
+export default function SiteLayout({ children }: PropsWithChildren) {
 	return (
-		<div className={`${sans.variable} ${serif.variable}`}>
+		<div
+			className={`${sans.variable} ${serif.variable} min-h-screen flex flex-col`}
+		>
 			<HeaderMobile />
-			<main>
+			<GlobalNavMobileTrigger />
+			<main className="flex-1">
 				<Sidebar />
 				<div className="w-full lg:pl-[244px] xl:pl-[268px]">
 					<div className="max-w-[1760px] 2xl:max-w-[1920px] mx-auto px-3 md:px-6">
-						<div className="grid lg:grid-cols-[200px_32px_minmax(0,1fr)] xl:grid-cols-[200px_36px_minmax(0,1fr)] gap-4 xl:gap-6">
-							{children}
-						</div>
+						<div className="lg:grid">{children}</div>
 					</div>
 				</div>
-				<Footer />
 			</main>
+			<Footer />
+			<SidePillNavMobile />
 		</div>
 	);
-};
-
-export default SiteLayout;
+}
