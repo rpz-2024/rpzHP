@@ -19,15 +19,31 @@ html,
 body {
 	background: var(--color-kinari);
 	color: var(--color-text);
-	min-height: 100vh; /* Tailwind's min-h-screen equivalent in base CSS */
+	min-height: 100vh;
+	/* Tailwind's min-h-screen equivalent in base CSS */
 	overflow-x: hidden;
 	margin: 0;
+}
+
+@media (max-width: 1023px) {
+	html,
+	body {
+		overflow-x: hidden;
+		width: 100%;
+		max-width: 100vw;
+	}
+
+	* {
+		max-width: 100%;
+		box-sizing: border-box;
+	}
 }
 
 /* Global smooth scroll except when user prefers reduced motion */
 html {
 	scroll-behavior: smooth;
 }
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
@@ -44,6 +60,7 @@ html {
 		Noto Sans JP,
 		sans-serif;
 }
+
 .font-serif {
 	font-family: var(--font-serif), "Noto Serif JP", serif;
 }
@@ -85,6 +102,7 @@ html {
 	position: relative;
 	display: inline-block;
 }
+
 .hamburger::before,
 .hamburger::after,
 .hamburger i {
@@ -98,21 +116,27 @@ html {
 		transform 0.25s ease,
 		opacity 0.2s ease;
 }
+
 .hamburger i {
 	top: 9px;
 }
+
 .hamburger::before {
 	top: 0;
 }
+
 .hamburger::after {
 	bottom: 0;
 }
+
 .hamburger.is-open i {
 	opacity: 0;
 }
+
 .hamburger.is-open::before {
 	transform: translateY(9px) rotate(45deg);
 }
+
 .hamburger.is-open::after {
 	transform: translateY(-9px) rotate(-45deg);
 }

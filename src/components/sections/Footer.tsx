@@ -1,6 +1,6 @@
-const Footer = () => {
+export default function Footer() {
 	return (
-		<footer className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#D30000] text-white">
+		<footer className="w-full bg-[#D30000] text-white">
 			<div className="mx-auto max-w-[2048px] 2xl:max-w-[2400px] px-4 md:px-8 py-16 md:py-20 text-center">
 				<div className="mb-4 inline-flex select-none items-center justify-center rounded-full bg-white/10 px-5 py-3 font-serif text-lg">
 					五十棲
@@ -11,6 +11,4 @@ const Footer = () => {
 			</div>
 		</footer>
 	);
-};
-
-export default Footer;
+}

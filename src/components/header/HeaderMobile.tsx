@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import GlobalNavMobileTrigger from "@/components/ui/GlobalNavMobileTrigger";
 
 export default function HeaderMobile() {
 	return (
@@ -16,7 +15,6 @@ export default function HeaderMobile() {
 						priority
 					/>
 				</a>
-				<GlobalNavMobileTrigger />
 			</div>
 		</header>
 	);
