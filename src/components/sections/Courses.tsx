@@ -1,8 +1,10 @@
 import Image from "next/image";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
+import type { ReactElement } from "react";
+
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
 import { courses, freeDrinks } from "@/data/courses";
 
-const Courses = () => {
+export function Courses(): ReactElement {
 	return (
 		<section className="lg:contents">
 			<div className="hidden lg:block lg:col-start-2">
@@ -33,28 +35,30 @@ const Courses = () => {
 					<div>
 						<h3 className="mb-3 font-serif text-xl font-bold">コース</h3>
 						<ul className="mb-4 space-y-2">
-							{courses.map((c) => (
+							{courses.map((course) => (
 								<li
-									key={c.name}
+									key={course.name}
 									className="flex items-baseline justify-between rounded-3xl bg-white/40 px-4 py-3 shadow-sm ring-1 ring-line/70"
 								>
 									<div>
-										<div className="font-medium">{c.name}</div>
-										<div className="text-xs text-subtext">{c.description}</div>
+										<div className="font-medium">{course.name}</div>
+										<div className="text-xs text-subtext">
+											{course.description}
+										</div>
 									</div>
 									<div className="font-bold text-red">
-										￥{c.price.toLocaleString()}
+										￥{course.price.toLocaleString()}
 									</div>
 								</li>
 							))}
 						</ul>
 						<div className="flex flex-wrap items-center gap-2">
-							{freeDrinks.map((f) => (
+							{freeDrinks.map((drink) => (
 								<span
-									key={f.name}
+									key={drink.name}
 									className="rounded-full bg-red/10 px-3 py-1 text-xs text-red ring-1 ring-red/30"
 								>
-									+ {f.name} ￥{f.price.toLocaleString()}
+									+ {drink.name} ￥{drink.price.toLocaleString()}
 								</span>
 							))}
 						</div>
@@ -63,6 +67,4 @@ const Courses = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Courses;
+}

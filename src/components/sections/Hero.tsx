@@ -1,9 +1,9 @@
 import Image from "next/image";
+import type { ReactElement } from "react";
 
-const Hero = () => {
+export function Hero(): ReactElement {
 	return (
 		<section aria-label="ヒーロー" className="lg:contents">
-			{/* Rail title (optional) left empty for hero to preserve look */}
 			<div className="hidden lg:block lg:col-start-2" aria-hidden />
 			<div
 				id="hero"
@@ -22,6 +22,4 @@ const Hero = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Hero;
+}

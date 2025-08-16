@@ -1,7 +1,9 @@
 import Image from "next/image";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
+import type { ReactElement } from "react";
 
-const Access = () => {
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
+
+export function Access(): ReactElement {
 	return (
 		<section className="lg:contents">
 			<div className="hidden lg:block lg:col-start-2">
@@ -27,6 +29,7 @@ const Access = () => {
 							alt="五十棲ロゴ"
 							width={40}
 							height={100}
+							className="w-auto h-auto"
 						/>
 					</div>
 					<div className="space-y-1">
@@ -47,6 +50,4 @@ const Access = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Access;
+}

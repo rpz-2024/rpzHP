@@ -1,10 +1,12 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useState } from "react";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
-import { NEWS } from "@/data/news";
 
-const NewsAccordion = () => {
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
+import { news } from "@/data/news";
+
+export function NewsAccordion(): ReactElement {
 	const [openId, setOpenId] = useState<string | null>(null);
 
 	return (
@@ -25,36 +27,37 @@ const NewsAccordion = () => {
 				</div>
 
 				<ul className="divide-y divide-stone-200">
-					{NEWS.map((n) => {
-						const open = openId === n.id;
-						const isHeading = n.title === "会社沿革" || /年$/.test(n.title);
+					{news.map((newsItem) => {
+						const isOpen = openId === newsItem.id;
+						const isHeading =
+							newsItem.title === "会社沿革" || /年$/.test(newsItem.title);
 						return (
-							<li key={n.id}>
+							<li key={newsItem.id}>
 								{isHeading ? (
 									<h3 className="px-5 py-3 text-stone-800 font-extrabold leading-tight text-lg md:text-xl">
-										{n.title}
+										{newsItem.title}
 									</h3>
 								) : (
 									<>
 										<button
 											type="button"
-											aria-expanded={open}
-											onClick={() => setOpenId(open ? null : n.id)}
+											aria-expanded={isOpen}
+											onClick={() => setOpenId(isOpen ? null : newsItem.id)}
 											className="w-full text-left px-5 py-4 cursor-pointer hover:bg-stone-100/60 focus-visible:outline-2 focus-visible:outline-red/60 flex items-center justify-between"
 										>
 											<span className="text-base md:text-lg font-semibold">
-												{n.title}
+												{newsItem.title}
 											</span>
 											<span
 												aria-hidden
 												className="ml-4 text-stone-400 text-xl leading-none"
 											>
-												{open ? "ー" : "＋"}
+												{isOpen ? "ー" : "＋"}
 											</span>
 										</button>
-										{open && (
+										{isOpen && (
 											<div className="px-5 pb-5 text-sm text-stone-700">
-												{n.body ?? "詳細は準備中です。"}
+												{newsItem.body ?? "詳細は準備中です。"}
 											</div>
 										)}
 									</>
@@ -66,6 +69,4 @@ const NewsAccordion = () => {
 			</div>
 		</section>
 	);
-};
-
-export default NewsAccordion;
+}

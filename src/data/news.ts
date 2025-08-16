@@ -1,10 +1,6 @@
-export type NewsItem = {
-	id: string;
-	title: string;
-	body?: string;
-	date?: string;
-};
-export const NEWS: NewsItem[] = [
+import type { News } from "@/types/news";
+
+export const news: News[] = [
 	{ id: "headline", title: "会社沿革" },
 	{ id: "y2024", title: "2024年" },
 	{ id: "2024-04-01", title: "4月：株式会社RPZ設立" },

@@ -1,6 +1,6 @@
-export type MenuItem = { name: string; price: number };
+import type { Menu } from "@/types/menu";
 
-export const drinks: MenuItem[] = [
+export const drinks: Menu[] = [
 	{ name: "生ビール", price: 600 },
 	{ name: "瓶ビール", price: 700 },
 	{ name: "ハイボール", price: 600 },
@@ -11,7 +11,7 @@ export const drinks: MenuItem[] = [
 	{ name: "ウーロン茶", price: 350 },
 ];
 
-export const foods: MenuItem[] = [
+export const foods: Menu[] = [
 	{ name: "季節の前菜盛り", price: 980 },
 	{ name: "お造り三種", price: 1280 },
 	{ name: "出汁巻き玉子", price: 680 },

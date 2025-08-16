@@ -1,8 +1,6 @@
-import "@/styles/globals.css";
+import type { PropsWithChildren } from "react";
 
-type RootLayoutProps = {
-	children: React.ReactNode;
-};
+import "@/styles/globals.css";
 
 export const metadata = {
 	metadataBase: new URL("https://example.com"),
@@ -15,14 +13,12 @@ export const metadata = {
 	icons: { icon: "/favicon.ico" },
 };
 
-const RootLayout = (props: RootLayoutProps) => {
+export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang="ja" className="bg-kinari text-text antialiased scroll-smooth">
 			<body className="font-sans text-base leading-relaxed min-h-screen overflow-x-hidden font-medium text-stone-800">
-				{props.children}
+				{children}
 			</body>
 		</html>
 	);
-};
-
-export default RootLayout;
+}

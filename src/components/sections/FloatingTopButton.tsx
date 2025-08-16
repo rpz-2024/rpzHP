@@ -1,15 +1,18 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useEffect, useRef } from "react";
+
 import { scrollTopInstant } from "@/lib/scrollTopInstant";
 
-const FloatingTopButton = () => {
+export function FloatingTopButton(): ReactElement {
 	const ref = useRef<HTMLButtonElement | null>(null);
 
 	useEffect(() => {
 		const btn = ref.current;
 		const footer = document.querySelector("footer");
 		if (!btn || !footer) return;
+
 		const io = new IntersectionObserver(
 			([entry]) => {
 				if (!btn || !entry) return;
@@ -37,6 +40,4 @@ const FloatingTopButton = () => {
 			↑
 		</button>
 	);
-};
-
-export default FloatingTopButton;
+}

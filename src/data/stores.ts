@@ -1,17 +1,6 @@
-export type Store = {
-	id: string;
-	name: string; // 店舗名（共通名）
-	area: string; // エリアラベル（京都駅前／烏丸六角／四条烏丸）
-	image: string;
-	description: string;
-	address: string;
-	hours: string;
-	tel: string;
-	instagram?: string;
-	hotpepper?: string;
-};
+import type { Store } from "@/types/stores";
 
-export const STORES: Store[] = [
+export const store: Store[] = [
 	{
 		id: "kyo-eki",
 		name: "蒸とアテふぅふぅ",

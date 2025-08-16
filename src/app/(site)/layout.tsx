@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import type { PropsWithChildren } from "react";
+
 import "@/styles/globals.css";
-import HeaderMobile from "@/components/header/HeaderMobile";
-import Footer from "@/components/sections/Footer";
-import Sidebar from "@/components/sidebar/Sidebar";
-import GlobalNavMobileTrigger from "@/components/ui/GlobalNavMobileTrigger";
-import SidePillNavMobile from "@/components/ui/SidePillNavMobile";
+import { Footer } from "@/components/layout/Footer";
+import { HeaderMobile } from "@/components/layout/HeaderMobile";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { GlobalNavMobileTrigger } from "@/components/ui/GlobalNavMobileTrigger";
+import { SidePillNavMobile } from "@/components/ui/SidePillNavMobile";
 
 const sans = Noto_Sans_JP({
 	subsets: ["latin"],
@@ -25,9 +27,7 @@ export const metadata: Metadata = {
 	title: "五十棲 | 季節の料理とお酒",
 };
 
-type Props = { children: React.ReactNode };
-
-const SiteLayout = ({ children }: Props) => {
+export default function SiteLayout({ children }: PropsWithChildren) {
 	return (
 		<div
 			className={`${sans.variable} ${serif.variable} min-h-screen flex flex-col`}
@@ -46,6 +46,4 @@ const SiteLayout = ({ children }: Props) => {
 			<SidePillNavMobile />
 		</div>
 	);
-};
-
-export default SiteLayout;
+}

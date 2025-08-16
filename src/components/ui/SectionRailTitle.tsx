@@ -1,6 +1,10 @@
-type Props = { children: React.ReactNode };
+import type { PropsWithChildren, ReactElement } from "react";
 
-export default function SectionRailTitle({ children }: Props) {
+export type SectionRailTitleProps = PropsWithChildren;
+
+export function SectionRailTitle({
+	children,
+}: SectionRailTitleProps): ReactElement {
 	return (
 		<div className="hidden lg:flex items-start justify-center pt-12">
 			<span className="text-red-700 font-extrabold tracking-[0.08em] writing-vertical text-[24px] xl:text-[28px] leading-none mr-4">

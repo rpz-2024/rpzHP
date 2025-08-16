@@ -1,16 +1,19 @@
 "use client";
+
 import Image from "next/image";
+import type { ReactElement } from "react";
 import { useEffect, useRef, useState } from "react";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
+
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
 import { drinks, foods } from "@/data/menu";
 
-const images = [
+const FOOD_IMAGES = [
 	"/images/dish-hero.svg",
 	"/images/dish-hero.svg",
 	"/images/dish-hero.svg",
 ].map((src, index) => ({ src, id: `dish-${index}` }));
 
-const FoodDrink = () => {
+export function FoodDrink(): ReactElement {
 	const [index, setIndex] = useState(0);
 	const timer = useRef<number | null>(null);
 	const pauseUntil = useRef(0);
@@ -23,7 +26,7 @@ const FoodDrink = () => {
 		if (timer.current) window.clearInterval(timer.current);
 		timer.current = window.setInterval(() => {
 			if (Date.now() < pauseUntil.current) return; // pause after user click
-			setIndex((i) => (i + 1) % images.length);
+			setIndex((i) => (i + 1) % FOOD_IMAGES.length);
 		}, 3000);
 		return () => {
 			if (timer.current) window.clearInterval(timer.current);
@@ -50,7 +53,7 @@ const FoodDrink = () => {
 							className="relative w-full aspect-[3/2] rounded-3xl overflow-hidden shadow-md md:shadow-lg"
 							aria-live="polite"
 						>
-							{images.map((image, i) => (
+							{FOOD_IMAGES.map((image, i) => (
 								<Image
 									key={image.id}
 									src={image.src}
@@ -68,7 +71,7 @@ const FoodDrink = () => {
 								role="tablist"
 								aria-label="Food images"
 							>
-								{images.map((image, i) => (
+								{FOOD_IMAGES.map((image, i) => (
 									<button
 										type="button"
 										key={image.id}
@@ -132,6 +135,4 @@ const FoodDrink = () => {
 			</div>
 		</section>
 	);
-};
-
-export default FoodDrink;
+}

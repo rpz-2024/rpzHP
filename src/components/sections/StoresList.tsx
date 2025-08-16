@@ -1,9 +1,11 @@
 import Image from "next/image";
+import type { ReactElement } from "react";
 import { FaInstagram } from "react-icons/fa";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
-import { STORES } from "@/data/stores";
 
-const StoresList = () => {
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
+import { store } from "@/data/stores";
+
+export function StoresList(): ReactElement {
 	return (
 		<section className="lg:contents">
 			<div className="hidden lg:block lg:col-start-2">
@@ -19,17 +21,17 @@ const StoresList = () => {
 				</div>
 
 				<div className="space-y-10 md:space-y-12">
-					{STORES.map((s) => (
+					{store.map((storeItem) => (
 						<article
-							key={s.id}
+							key={storeItem.id}
 							className="grid lg:grid-cols-12 gap-6 lg:gap-6 items-stretch lg:min-h-[320px] xl:min-h-[380px]"
 						>
 							{/* 画像 */}
 							<div className="relative lg:col-span-6  xl:max-w-[450px]">
 								<div className="relative aspect-[16/14] overflow-hidden rounded-3xl">
 									<Image
-										src={s.image}
-										alt={`${s.name}の店舗画像`}
+										src={storeItem.image}
+										alt={`${storeItem.name}の店舗画像`}
 										fill
 										className="object-cover"
 										sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 880px"
@@ -42,45 +44,47 @@ const StoresList = () => {
 								{/* エリアラベル（店名の上） */}
 								<div className="mb-2 md:mb-3">
 									<span className="inline-flex items-center rounded-full bg-stone-900 text-white text-sm md:text-base font-semibold px-3 py-1">
-										{s.area}
+										{storeItem.area}
 									</span>
 								</div>
 								<h3 className="mb-2 text-2xl md:text-3xl font-extrabold text-stone-800">
-									{s.name}
+									{storeItem.name}
 								</h3>
 								<p className="text-red-600 font-bold leading-relaxed mb-4">
-									{s.description}
+									{storeItem.description}
 								</p>
 
 								<dl className="space-y-1 text-stone-700 text-base md:text-lg">
 									<div>
 										<dt className="inline font-semibold">住所：</dt>
-										<dd className="inline break-words">{s.address}</dd>
+										<dd className="inline break-words">{storeItem.address}</dd>
 									</div>
 									<div>
 										<dt className="inline font-semibold">営業時間：</dt>
-										<dd className="inline">{s.hours}</dd>
+										<dd className="inline">{storeItem.hours}</dd>
 									</div>
 									<div>
 										<dt className="inline font-semibold">電話番号：</dt>
-										<dd className="inline">{s.tel}</dd>
+										<dd className="inline">{storeItem.tel}</dd>
 									</div>
 								</dl>
 
 								<div className="mt-auto pt-5 flex flex-wrap gap-3">
-									{s.instagram && (
+									{storeItem.instagram && (
 										<a
-											href={s.instagram}
+											href={storeItem.instagram}
 											target="_blank"
+											rel="noopener noreferrer"
 											className="inline-flex items-center"
 										>
 											<FaInstagram className="mx-auto text-5xl text-red-600 hover:brightness-110 active:brightness-90 focus-visible:outline-red transition-colors" />
 										</a>
 									)}
-									{s.hotpepper && (
+									{storeItem.hotpepper && (
 										<a
-											href={s.hotpepper}
+											href={storeItem.hotpepper}
 											target="_blank"
+											rel="noopener noreferrer"
 											className="inline-flex items-center gap-2 rounded-full bg-[#D30000] hover:brightness-110 active:brightness-90 focus-visible:outline-red px-16 py-2 text-white shadow-sm"
 										>
 											STORE SITE
@@ -94,6 +98,4 @@ const StoresList = () => {
 			</div>
 		</section>
 	);
-};
-
-export default StoresList;
+}

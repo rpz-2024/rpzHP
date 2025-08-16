@@ -1,7 +1,9 @@
 import Image from "next/image";
-import SectionRailTitle from "@/components/ui/SectionRailTitle";
+import type { ReactElement } from "react";
 
-const Intro = () => {
+import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
+
+export function Intro(): ReactElement {
 	return (
 		<section className="lg:contents">
 			<div className="hidden lg:block lg:col-start-2">
@@ -20,7 +22,7 @@ const Intro = () => {
 						alt="五十棲 ロゴ"
 						width={76}
 						height={176}
-						className="opacity-90"
+						className="opacity-90 w-auto h-auto"
 						priority
 					/>
 				</div>
@@ -48,6 +50,4 @@ const Intro = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Intro;
+}

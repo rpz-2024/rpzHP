@@ -1,4 +1,4 @@
-export default function Footer() {
+export function Footer() {
 	return (
 		<footer className="w-full bg-[#D30000] text-white">
 			<div className="mx-auto max-w-[2048px] 2xl:max-w-[2400px] px-4 md:px-8 py-16 md:py-20 text-center">

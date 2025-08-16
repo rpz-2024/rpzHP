@@ -1,22 +1,30 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { AnchorHTMLAttributes } from "react";
+import type {
+	AnchorHTMLAttributes,
+	PropsWithChildren,
+	ReactElement,
+} from "react";
 
-type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
-	href: string;
-	active?: boolean;
-};
+export type PillNavLinkProps = PropsWithChildren<
+	AnchorHTMLAttributes<HTMLAnchorElement> & {
+		href: string;
+		active?: boolean;
+	}
+>;
 
-const PillNavLink = ({
+export function PillNavLink({
 	href,
 	active,
 	children,
 	className = "",
 	...rest
-}: Props) => {
+}: PillNavLinkProps): ReactElement {
 	const pathname = usePathname();
 	const isActive = active ?? pathname === href;
+
 	return (
 		<Link
 			href={href}
@@ -28,6 +36,4 @@ const PillNavLink = ({
 			{children}
 		</Link>
 	);
-};
-
-export default PillNavLink;
+}
