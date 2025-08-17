@@ -65,6 +65,12 @@ html {
 	font-family: var(--font-serif), "Noto Serif JP", serif;
 }
 
+.font-pixel {
+	font-family:
+		var(--font-pixelmplus), system-ui, -apple-system, "Segoe UI", Roboto,
+		"Noto Sans JP", sans-serif;
+}
+
 /* Utilities */
 .shadow-soft {
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
