@@ -40,7 +40,7 @@ export function Access(): ReactElement {
 						<div className="pt-2 mb-10 md:mb-14 lg:mb-20">
 							<a
 								href="/"
-								className="inline-flex items-center gap-2 rounded-full bg-[#D30000] px-6 py-2.5 text-base font-semibold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
+								className="inline-flex items-center gap-2 rounded-full font-pixel bg-[#D30000] px-6 py-2.5 text-base font-semibold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
 							>
 								WEB予約はこちら
 							</a>
