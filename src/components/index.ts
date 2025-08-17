@@ -22,5 +22,4 @@ export { StoresList } from "./sections/StoresList";
 export { GlobalNavMobileTrigger } from "./ui/GlobalNavMobileTrigger";
 export { PillNavLink } from "./ui/PillNavLink";
 export { SectionRailTitle } from "./ui/SectionRailTitle";
-export { SidePillNav } from "./ui/SidePillNav";
 export { SidePillNavMobile } from "./ui/SidePillNavMobile";
