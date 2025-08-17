@@ -36,7 +36,7 @@ export function Sidebar() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="block text-center rounded-full bg-[#D30000] text-white py-5 px-3 font-semibold hover:brightness-110 active:brightness-90 focus-visible:outline-red transition text-xl"
+							className="block text-center rounded-full bg-[#D30000] text-white py-5 px-3 font-pixel font-semibold hover:brightness-110 active:brightness-90 focus-visible:outline-red transition text-xl"
 						>
 							{item.label}
 						</Link>

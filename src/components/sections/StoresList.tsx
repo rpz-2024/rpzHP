@@ -85,7 +85,7 @@ export function StoresList(): ReactElement {
 											href={storeItem.hotpepper}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="inline-flex items-center gap-2 rounded-full bg-[#D30000] hover:brightness-110 active:brightness-90 focus-visible:outline-red px-16 py-2 text-white shadow-sm"
+											className="inline-flex items-center gap-2 rounded-full font-pixel bg-[#D30000] hover:brightness-110 active:brightness-90 focus-visible:outline-red px-16 py-2 text-white shadow-sm"
 										>
 											STORE SITE
 										</a>

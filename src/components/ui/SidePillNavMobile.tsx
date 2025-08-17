@@ -117,7 +117,7 @@ export function SidePillNavMobile(): ReactElement {
 								href={navItem.href}
 								ref={idx === 0 ? firstBtnRef : undefined}
 								onClick={handleLinkClick}
-								className="h-12 rounded-full bg-[#D30000] px-6 text-white shadow-sm transition hover:brightness-110 active:brightness-90 tracking-wide grid place-items-center w-full max-w-[360px]"
+								className="h-12 rounded-full bg-[#D30000] px-6 font-pixel text-white shadow-sm transition hover:brightness-110 active:brightness-90 tracking-wide grid place-items-center w-full max-w-[360px]"
 							>
 								{navItem.label}
 							</Link>
