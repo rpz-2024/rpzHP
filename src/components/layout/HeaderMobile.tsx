@@ -8,10 +8,10 @@ export function HeaderMobile() {
 			<div className="h-14 px-4 flex items-center justify-between">
 				<a href="/" aria-label="ホームへ" className="shrink-0">
 					<Image
-						src="/logo-horizontal.svg"
+						src="/rpz-logo.jpg"
 						alt="五十棲グループ"
 						width={140}
-						height={28}
+						height={40}
 						className="h-8 w-auto"
 						priority
 					/>

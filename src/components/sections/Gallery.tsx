@@ -17,7 +17,7 @@ export function Gallery(): ReactElement {
 				id="gallery"
 				className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10"
 			>
-				<div className="lg:hidden block text-red-700 font-extrabold text-2xl md:text-3xl mt-6 mb-3">
+				<div className="lg:hidden block text-red-700 font-pixel text-2xl md:text-3xl mt-6 mb-3">
 					店内
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5">

@@ -16,7 +16,7 @@ export default function SiteLayout({ children }: PropsWithChildren) {
 				<Sidebar />
 				<div className="w-full lg:pl-[244px] xl:pl-[268px]">
 					<div className="mx-auto max-w-[1760px] 2xl:max-w-[1920px] px-3 md:px-6">
-						<div className="lg:grid">{children}</div>
+						<div className="lg:grid ">{children}</div>
 					</div>
 				</div>
 			</main>

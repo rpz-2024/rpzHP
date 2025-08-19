@@ -35,7 +35,7 @@ export function FloatingTopButton(): ReactElement {
 			ref={ref}
 			aria-label="ページの先頭へ戻る"
 			onClick={scrollTopInstant}
-			className="fixed bottom-6 right-3 md:right-6 z-40 grid h-12 w-12 place-items-center rounded-full cursor-pointer bg-[#D30000] text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
+			className="fixed bottom-6 right-3 md:right-6 z-10 grid h-12 w-12 place-items-center rounded-full cursor-pointer bg-[#D30000] text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
 		>
 			↑
 		</button>
