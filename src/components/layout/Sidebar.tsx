@@ -24,7 +24,7 @@ export function Sidebar() {
 					className="block text-center"
 				>
 					<Image
-						src="/logo.svg"
+						src="/rpz-logo.jpg"
 						alt="五十棲"
 						width={140}
 						height={40}

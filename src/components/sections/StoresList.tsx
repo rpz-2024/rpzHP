@@ -16,7 +16,7 @@ export function StoresList(): ReactElement {
 				id="stores"
 				className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10"
 			>
-				<div className="lg:hidden block text-red-700 font-extrabold text-2xl md:text-3xl mt-6 mb-3">
+				<div className="lg:hidden block text-red-700 font-pixel text-2xl md:text-3xl mt-6 mb-3">
 					各店舗の情報
 				</div>
 

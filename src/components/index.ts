@@ -20,6 +20,5 @@ export { StoresList } from "./sections/StoresList";
 
 // UI components
 export { GlobalNavMobileTrigger } from "./ui/GlobalNavMobileTrigger";
-export { PillNavLink } from "./ui/PillNavLink";
 export { SectionRailTitle } from "./ui/SectionRailTitle";
 export { SidePillNavMobile } from "./ui/SidePillNavMobile";

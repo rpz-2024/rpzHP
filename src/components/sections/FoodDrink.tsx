@@ -42,7 +42,7 @@ export function FoodDrink(): ReactElement {
 				id="food"
 				className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10"
 			>
-				<div className="lg:hidden block text-red-700 font-extrabold text-2xl md:text-3xl mt-6 mb-3">
+				<div className="lg:hidden block text-red-700 font-pixel text-2xl md:text-3xl mt-6 mb-3">
 					食と飲み物
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">

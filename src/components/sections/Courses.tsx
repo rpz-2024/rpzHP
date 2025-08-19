@@ -14,7 +14,7 @@ export function Courses(): ReactElement {
 				id="courses"
 				className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10 overflow-visible"
 			>
-				<div className="lg:hidden block text-red-700 font-extrabold text-2xl md:text-3xl mt-6 mb-3">
+				<div className="lg:hidden block text-red-700 font-pixel text-2xl md:text-3xl mt-6 mb-3">
 					コース
 				</div>
 				<div className="grid items-start gap-8 lg:grid-cols-2">

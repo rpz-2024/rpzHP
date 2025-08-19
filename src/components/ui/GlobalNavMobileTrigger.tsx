@@ -35,7 +35,7 @@ export function GlobalNavMobileTrigger(): ReactElement {
 			aria-expanded={isOpen}
 			aria-controls="mobile-menu"
 			onClick={handleClick}
-			className="fixed right-3 top-3 z-[9999] grid h-11 w-11 place-items-center rounded-full bg-[#D30000] text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red md:hidden lg:hidden xl:hidden 2xl:hidden"
+			className="fixed right-3 top-3 z-[9999] grid h-11 w-11 place-items-center rounded-full bg-[#D30000] text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red lg:hidden xl:hidden 2xl:hidden"
 		>
 			<span aria-hidden className={`hamburger ${isOpen ? "is-open" : ""}`}>
 				<i></i>
