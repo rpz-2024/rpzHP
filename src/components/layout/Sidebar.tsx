@@ -36,9 +36,20 @@ export function Sidebar() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="block text-center rounded-full bg-[#D30000] text-white py-5 px-3 font-pixel font-semibold hover:brightness-110 active:brightness-90 focus-visible:outline-red transition text-xl"
+							className="block text-center rounded-full bg-[#D30000] text-black py-8 px-6 font-pixel font-semibold hover:brightness-110 active:brightness-90 focus-visible:outline-red transition text-xl relative w-[140px] h-[40px] mx-auto"
 						>
-							{item.label}
+							{/* 背景画像 */}
+							<Image
+								src="/background/background2.png"
+								alt="背景"
+								fill
+								className="object-cover rounded-full"
+							/>
+
+							{/* テキスト（中央配置） */}
+							<span className="absolute inset-0 flex items-center justify-center">
+								{item.label}
+							</span>
 						</Link>
 					))}
 				</nav>
