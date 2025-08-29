@@ -26,14 +26,15 @@ export function StoresList(): ReactElement {
 							key={storeItem.id}
 							className="grid lg:grid-cols-12 gap-6 lg:gap-6 items-stretch lg:min-h-[320px] xl:min-h-[380px]"
 						>
+
 							{/* 画像 */}
 							<div className="relative lg:col-span-6  xl:max-w-[450px]">
 								<div className="relative aspect-[16/14] overflow-hidden rounded-3xl">
 									<Image
-										src={storeItem.image}
-										alt={`${storeItem.name}の店舗画像`}
+										src={storeItem.image} // ← ここで image プロパティを参照
+										alt={`${storeItem.name}のロゴ`}
 										fill
-										className="object-cover"
+										className="object-contain"
 										sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 880px"
 									/>
 								</div>
@@ -61,7 +62,9 @@ export function StoresList(): ReactElement {
 									</div>
 									<div>
 										<dt className="inline font-semibold">営業時間：</dt>
-										<dd className="inline">{storeItem.hours}</dd>
+										<dd className="inline whitespace-pre-line">
+											{storeItem.hours.replace(/<br\s*\/?>/gi, "\n")}
+										</dd>
 									</div>
 									<div>
 										<dt className="inline font-semibold">電話番号：</dt>

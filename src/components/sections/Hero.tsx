@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { ReactElement } from "react";
 
 export function Hero(): ReactElement {
@@ -10,14 +9,17 @@ export function Hero(): ReactElement {
 				className="lg:col-start-3 pt-6 scroll-mt-28 lg:scroll-mt-32 relative z-10 overflow-visible"
 			>
 				<div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl shadow-md md:shadow-lg">
-					<Image
-						src="/images/hero.svg"
-						alt="季節の料理のテーブル風景"
-						fill
-						priority
-						sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1760px"
-						className="object-cover"
-					/>
+					<video
+						src="/videos/Hero.mp4"
+						autoPlay
+						loop
+						muted
+						playsInline
+						className="w-full h-full object-cover"
+						aria-label="季節の料理とお酒の動画"
+					>
+						<track kind="captions" />
+					</video>
 				</div>
 			</div>
 		</section>

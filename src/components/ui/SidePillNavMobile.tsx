@@ -87,9 +87,8 @@ export function SidePillNavMobile(): ReactElement {
 				id="mobile-menu"
 				role="dialog"
 				aria-modal="true"
-				className={`fixed inset-0 z-[10] lg:hidden transition-opacity ${
-					isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-				}`}
+				className={`fixed inset-0 z-[10] lg:hidden transition-opacity ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+					}`}
 				onClick={handleClose}
 				onKeyDown={(e) => {
 					if (e.key === "Enter" || e.key === " ") {
@@ -100,9 +99,8 @@ export function SidePillNavMobile(): ReactElement {
 				<div
 					ref={panelRef}
 					role="menu"
-					className={`fixed inset-0 bg-[#FBF5EF] transform transition-transform duration-300 ease-out ${
-						isOpen ? "translate-x-0" : "translate-x-full"
-					}`}
+					className={`fixed inset-0 bg-[#FBF5EF] transform transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
+						}`}
 					onClick={(e) => e.stopPropagation()}
 					onKeyDown={(e) => {
 						if (e.key === "Enter" || e.key === " ") {
@@ -117,7 +115,7 @@ export function SidePillNavMobile(): ReactElement {
 								href={navItem.href}
 								ref={idx === 0 ? firstBtnRef : undefined}
 								onClick={handleLinkClick}
-								className="h-12 rounded-full bg-[#D30000] px-6 font-pixel text-white shadow-sm transition hover:brightness-110 active:brightness-90 tracking-wide grid place-items-center w-full max-w-[360px]"
+								className="h-12 rounded-full bg-[url('/background/background4.png')] bg-cover bg-center px-6 font-pixel text-white shadow-sm transition hover:brightness-110 active:brightness-90 tracking-wide grid place-items-center w-full max-w-[360px]"
 							>
 								{navItem.label}
 							</Link>

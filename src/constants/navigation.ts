@@ -1,7 +1,7 @@
 import type { Navigation } from "@/types/navigation";
 
 export const MAIN_NAVIGATION: Navigation[] = [
-	{ href: "/omoi", label: "RPZの思い" },
+	{ href: "/omoi", label: "RPZの想い" },
 	{ href: "/company", label: "会社概要" },
 	{ href: "/brands", label: "ブランド一覧" },
 	{ href: "/news", label: "ニュース" },
@@ -10,7 +10,5 @@ export const MAIN_NAVIGATION: Navigation[] = [
 ];
 
 export const EXTERNAL_URLS = {
-	GITHUB: "https://github.com",
 	INSTAGRAM: "https://www.instagram.com/",
-	TWITTER: "https://twitter.com",
 } as const;

@@ -8,7 +8,7 @@ import { EXTERNAL_URLS, MAIN_NAVIGATION } from "@/constants/navigation";
 
 export function Sidebar() {
 	return (
-		<aside className="hidden lg:flex fixed top-6 left-3 md:left-4 z-[90] w-[220px] xl:w-[240px] h-[calc(100vh-1.5rem)] flex-col">
+		<aside className="hidden lg:flex fixed top-6 left-3 md:left-4 z-[90] w-[280px] xl:w-[320px] h-[calc(100vh-1.5rem)] flex-col">
 			<div className="space-y-4">
 				<a
 					href="/"
@@ -24,7 +24,7 @@ export function Sidebar() {
 					className="block text-center"
 				>
 					<Image
-						src="/rpz-logo.jpg"
+						src="/RPZlogo.png"
 						alt="五十棲"
 						width={140}
 						height={40}
@@ -36,11 +36,11 @@ export function Sidebar() {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="block text-center rounded-full bg-[#D30000] text-black py-8 px-6 font-pixel font-semibold hover:brightness-110 active:brightness-90 focus-visible:outline-red transition text-xl relative w-[140px] h-[40px] mx-auto"
+							className="block text-center rounded-full bg-[#D30000] text-white py-8 px-6 font-pixel font-semibold hover:brightness-110 active:brightness-90 focus-visible:outline-red transition text-xl relative w-[180px] h-[40px] mx-auto"
 						>
 							{/* 背景画像 */}
 							<Image
-								src="/background/background2.png"
+								src="/background/background4.png"
 								alt="背景"
 								fill
 								className="object-cover rounded-full"
@@ -53,7 +53,7 @@ export function Sidebar() {
 						</Link>
 					))}
 				</nav>
-				<a
+				{/* <a
 					href={EXTERNAL_URLS.INSTAGRAM}
 					target="_blank"
 					rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export function Sidebar() {
 					className="block text-center"
 				>
 					<FaInstagram className="mx-auto text-4xl text-[#D30000] hover:brightness-110 active:brightness-90 focus-visible:outline-red transition-colors" />
-				</a>
+				</a> */}
 			</div>
 		</aside>
 	);
