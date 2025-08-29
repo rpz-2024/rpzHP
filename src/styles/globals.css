@@ -92,8 +92,10 @@ html {
 
 /* Vertical writing utility for rail titles */
 .writing-vertical {
-	writing-mode: vertical-rl;
-	text-orientation: upright;
+	/* writing-mode: vertical-rl; */
+	/* text-orientation: upright; */
+	writing-mode: horizontal-tb;
+	text-orientation: mixed;
 }
 
 /* Focus ring visible */
