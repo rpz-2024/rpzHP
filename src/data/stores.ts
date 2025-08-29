@@ -65,7 +65,7 @@ export const store: Store[] = [
 		id: "jokigen",
 		name: "蒸キゲン〜jokigen〜",
 		area: "烏丸御池",
-		image: "/images/fufu_jokigen_logo.png",
+		image: "/images/fufu_jokigen_logo.jpg",
 		description: "coming soon",
 		address: "京都府京都市中京区姉小路通東洞院東入笹屋町446 井上ビル 1F・2F",
 		hours: "16:00～23:00",
