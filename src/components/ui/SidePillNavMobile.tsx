@@ -87,8 +87,9 @@ export function SidePillNavMobile(): ReactElement {
 				id="mobile-menu"
 				role="dialog"
 				aria-modal="true"
-				className={`fixed inset-0 z-[10] lg:hidden transition-opacity ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-					}`}
+				className={`fixed inset-0 z-[10] lg:hidden transition-opacity ${
+					isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+				}`}
 				onClick={handleClose}
 				onKeyDown={(e) => {
 					if (e.key === "Enter" || e.key === " ") {
@@ -99,8 +100,9 @@ export function SidePillNavMobile(): ReactElement {
 				<div
 					ref={panelRef}
 					role="menu"
-					className={`fixed inset-0 bg-[#FBF5EF] transform transition-transform duration-300 ease-out ${isOpen ? "translate-x-0" : "translate-x-full"
-						}`}
+					className={`fixed inset-0 bg-[#FBF5EF] transform transition-transform duration-300 ease-out ${
+						isOpen ? "translate-x-0" : "translate-x-full"
+					}`}
 					onClick={(e) => e.stopPropagation()}
 					onKeyDown={(e) => {
 						if (e.key === "Enter" || e.key === " ") {

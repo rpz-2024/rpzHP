@@ -32,7 +32,8 @@ export const store: Store[] = [
 		image: "/images/fufu_mushi_logo.png",
 		description: "coming soon",
 		address: "愛知県豊田市西町１丁目１６",
-		hours: "月〜木:17:00〜23:00\n金:17:00〜0:00\n土:16:00〜0:00\n日・祝:16:00〜23:00",
+		hours:
+			"月〜木:17:00〜23:00\n金:17:00〜0:00\n土:16:00〜0:00\n日・祝:16:00〜23:00",
 		tel: "0565-47-7570",
 		instagram: "https://www.instagram.com/fufu_mushitoate_toyota",
 		hotpepper: "https://www.hotpepper.jp/",
@@ -65,7 +66,7 @@ export const store: Store[] = [
 		id: "jokigen",
 		name: "蒸キゲン〜jokigen〜",
 		area: "烏丸御池",
-		image: "/images/fufu_jokigen_logo.png",
+		image: "/images/fufu_jokigen_logo.jpg",
 		description: "coming soon",
 		address: "京都府京都市中京区姉小路通東洞院東入笹屋町446 井上ビル 1F・2F",
 		hours: "16:00～23:00",

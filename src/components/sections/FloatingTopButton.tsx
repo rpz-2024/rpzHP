@@ -3,7 +3,7 @@
 import type { ReactElement } from "react";
 import { useEffect, useRef } from "react";
 
-import { scrollTopInstant } from "@/lib/scrollTopInstant";
+import { scrollToTopInstant } from "@/lib/scroll";
 
 export function FloatingTopButton(): ReactElement {
 	const ref = useRef<HTMLButtonElement | null>(null);
@@ -34,7 +34,7 @@ export function FloatingTopButton(): ReactElement {
 			type="button"
 			ref={ref}
 			aria-label="ページの先頭へ戻る"
-			onClick={scrollTopInstant}
+			onClick={scrollToTopInstant}
 			className="fixed bottom-6 right-3 md:right-6 z-10 grid h-12 w-12 place-items-center rounded-full cursor-pointer bg-[#D30000] text-white shadow-soft transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
 		>
 			↑
