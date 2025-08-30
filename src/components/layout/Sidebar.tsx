@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa";
 
-import { EXTERNAL_URLS, MAIN_NAVIGATION } from "@/constants/navigation";
+import { MAIN_NAVIGATION } from "@/constants/navigation";
 
 export function Sidebar() {
 	return (

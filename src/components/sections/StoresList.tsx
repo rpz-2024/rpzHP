@@ -26,7 +26,6 @@ export function StoresList(): ReactElement {
 							key={storeItem.id}
 							className="grid lg:grid-cols-12 gap-6 lg:gap-6 items-stretch lg:min-h-[320px] xl:min-h-[380px]"
 						>
-
 							{/* 画像 */}
 							<div className="relative lg:col-span-6  xl:max-w-[450px]">
 								<div className="relative aspect-[16/14] overflow-hidden rounded-3xl">
