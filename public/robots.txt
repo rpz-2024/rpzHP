@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rpz.jp
+
+# Sitemaps
+Sitemap: https://rpz.jp/sitemap.xml
