@@ -3,12 +3,18 @@
 import * as React from "react";
 import { ABOUTUS_CONTENT } from "@/data/aboutus";
 
-const SectionTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">{children}</h1>
+const SectionTitle: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => (
+  <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+    {children}
+  </h1>
 );
 
 const SectionLead: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <p className="mt-4 text-lg md:text-xl font-bold text-neutral-800 leading-relaxed">{children}</p>
+  <p className="mt-4 text-lg md:text-xl font-bold text-neutral-800 leading-relaxed">
+    {children}
+  </p>
 );
 
 export function AboutusSection() {
