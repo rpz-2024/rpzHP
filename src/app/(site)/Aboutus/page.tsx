@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "RPZの想い | 株式会社RPZ",
     description:
       "飲食を通じて感動体験を届けるRPZの理念。人を想い、人々を支え、仲間と共に志ある目標に挑みます。",
-    url: "https://rpz.jp/Aboutus",
+    url: "https://rpz.jp/aboutus",
     siteName: "株式会社RPZ",
     locale: "ja_JP",
     type: "website",
