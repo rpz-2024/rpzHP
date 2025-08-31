@@ -42,12 +42,7 @@ const eslintConfig = tseslint.config(
       unicorn: unicornPlugin,
     },
     rules: {
-      "unicorn/filename-case": [
-        "error",
-        {
-          case: "kebabCase",
-        },
-      ],
+      "unicorn/filename-case": "off", // kebab-caseを無効にする
     },
   },
   eslintConfigPrettier,

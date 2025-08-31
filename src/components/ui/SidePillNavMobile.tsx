@@ -33,10 +33,10 @@ export function SidePillNavMobile(): ReactElement {
         const last = focusable[focusable.length - 1];
         if (e.shiftKey && document.activeElement === first) {
           e.preventDefault();
-          (last as HTMLElement).focus();
+          last!.focus();
         } else if (!e.shiftKey && document.activeElement === last) {
           e.preventDefault();
-          (first as HTMLElement).focus();
+          first!.focus();
         }
       }
     };

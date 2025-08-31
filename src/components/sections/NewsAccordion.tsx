@@ -30,7 +30,7 @@ export function NewsAccordion(): ReactElement {
           {news.map((newsItem) => {
             const isOpen = openId === newsItem.id;
             const isHeading =
-              newsItem.title === "会社沿革" || /年$/.test(newsItem.title);
+              newsItem.title === "会社沿革" || newsItem.title.endsWith("年");
             return (
               <li key={newsItem.id}>
                 {isHeading ? (

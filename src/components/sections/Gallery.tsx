@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
 
 const GALLERY_IMAGES = Array.from({ length: 9 })
-  .map((_, i) => `/images/gallery-0${i + 1}.svg`)
+  .map((_, i) => `/images/gallery0${i + 1}.svg`)
   .slice(0, 8);
 
 export function Gallery(): ReactElement {

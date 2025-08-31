@@ -7,11 +7,13 @@ import { useEffect, useRef, useState } from "react";
 import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
 import { drinks, foods } from "@/data/menu";
 
-const FOOD_IMAGES = [
-  "/images/dish-hero.svg",
-  "/images/dish-hero.svg",
-  "/images/dish-hero.svg",
-].map((src, index) => ({ src, id: `dish-${index}` }));
+const images = [
+  "/images/dishHero.svg",
+  "/images/dishHero.svg",
+  "/images/dishHero.svg",
+];
+
+const FOOD_IMAGES = images.map((src, index) => ({ src, id: `dish${index}` }));
 
 export function FoodDrink(): ReactElement {
   const [index, setIndex] = useState(0);

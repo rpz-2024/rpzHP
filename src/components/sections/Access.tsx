@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactElement } from "react";
 
 import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
@@ -25,7 +26,7 @@ export function Access(): ReactElement {
         <div className="grid gap-6 text-lg md:text-xl md:grid-cols-[auto_1fr] md:items-center leading-relaxed">
           <div className="flex items-center justify-center md:justify-start">
             <Image
-              src="/images/logo-vertical.svg"
+              src="/images/logoVertical.svg"
               alt="五十棲ロゴ"
               width={40}
               height={100}
@@ -38,12 +39,12 @@ export function Access(): ReactElement {
             <div>営業時間 17:00-23:00（L.O. 22:00）/ 定休 火</div>
             <div>TEL 03-1234-5678</div>
             <div className="pt-2 mb-10 md:mb-14 lg:mb-20">
-              <a
+              <Link
                 href="/"
                 className="inline-flex items-center gap-2 rounded-full font-pixel bg-[#D30000] px-6 py-2.5 text-base font-semibold tracking-wide text-white shadow-sm transition hover:brightness-110 active:brightness-90 focus-visible:outline-red"
               >
                 WEB予約はこちら
-              </a>
+              </Link>
             </div>
           </div>
         </div>

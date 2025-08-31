@@ -18,7 +18,7 @@ export function Intro(): ReactElement {
         </div>
         <div className="mb-6 grid place-items-center">
           <Image
-            src="/images/logo-vertical.svg"
+            src="/images/logoVertical.svg"
             alt="五十棲 ロゴ"
             width={76}
             height={176}

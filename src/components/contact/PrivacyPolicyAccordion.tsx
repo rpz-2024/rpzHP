@@ -91,7 +91,7 @@ export const PrivacyPolicyAccordion = ({
         {errors.privacyAgreement && (
           <ErrorMessage
             id="privacy-agreement-error"
-            message={errors.privacyAgreement.message || ""}
+            message={errors.privacyAgreement.message ?? ""}
             className="ml-8"
           />
         )}

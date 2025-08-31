@@ -9,7 +9,7 @@ export function Sidebar() {
   return (
     <aside className="hidden lg:flex fixed top-6 left-3 md:left-4 z-[90] w-[280px] xl:w-[320px] h-[calc(100vh-1.5rem)] flex-col">
       <div className="space-y-4">
-        <a
+        <Link
           href="/"
           onClick={(e) => {
             if (
@@ -29,7 +29,7 @@ export function Sidebar() {
             height={40}
             className="mx-auto w-auto h-auto"
           />
-        </a>
+        </Link>
         <nav className="space-y-3">
           {MAIN_NAVIGATION.map((item) => (
             <Link

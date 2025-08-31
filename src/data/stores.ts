@@ -2,7 +2,7 @@ import type { Store } from "@/types/stores";
 
 export const store: Store[] = [
   {
-    id: "kyo-eki",
+    id: "kyoEki",
     name: "蒸とアテふぅふぅ",
     area: "京都駅前",
     image: "/images/fufu_mushi_logo.png",
