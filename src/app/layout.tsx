@@ -41,9 +41,9 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
-	title: "RPZ",
+	title: "株式会社RPZ",
 	description:
-		"生成りの空間で味わう季節の料理とお酒。落ち着いた和のひとときをお楽しみください。",
+		"飲食を通じて感動体験を提供する企業としての理念、沿革、事業内容をご紹介します。",
 	icons: { icon: "/favicon.ico" },
 	alternates: { canonical: "/" },
 };
