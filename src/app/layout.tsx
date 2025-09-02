@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
 	title: "株式会社RPZ | 京都から特別な体験を届ける飲食ブランド",
 	description:
-		"株式会社RPZは京都を拠点に「鉄板とアテ ふぅふぅ」など独自ブランドを展開し、感動体験をお届けする飲食企業です。素材を活かした料理と落ち着いた空間で特別な時間をお楽しみください。",
+		"株式会社RPZは京都を拠点に「蒸とアテ ふぅふぅ」など独自ブランドを展開し、特別な体験をお届けする飲食企業です。素材を活かした料理と落ち着いた空間で特別な時間をお楽しみください。",
 	icons: { icon: "/favicon.ico" },
 	alternates: { canonical: "/" },
 };
