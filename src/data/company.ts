@@ -2,21 +2,18 @@ import type { CompanyContent } from "@/types/company";
 
 export const COMPANY_CONTENT: CompanyContent = {
   title: "会社概要",
-  lead: "“食×RPG体験”で、また来たくなる時間をつくる。",
+  lead: "“食×RPZ体験”で、また来たくなる時間をつくる。",
 
   profileTitle: "会社情報",
   profile: [
     { label: "会社名", value: "株式会社RPZ" },
-    {
-      label: "本社所在地",
-      value: "〒600-8007 京都府京都市中京区立売西町66番地京都証券ビル405",
-    },
-    { label: "役員", value: "代表取締役 斎藤　拓海" },
+    { label: "本社所在地", value: "〒600-8007 京都府京都市中京区立売西町66番地京都証券ビル405" },
+    { label: "役員", value: "代表取締役 齋藤　拓海" },
     { label: "設立年月日", value: "2024年4月" },
     { label: "資本金", value: "200万円" },
     { label: "事業内容", value: "飲食店の経営\nコンサルティング事業" },
     { label: "決算期", value: "3月末日" },
-    { label: "店舗数", value: "直営3ブランド4店舗\nFC1ブランド2店舗" },
+    { label: "店舗数", value: "直営 : 3ブランド4店舗\nFC : 1ブランド2店舗" },
     { label: "従業員数", value: "80名(正社員7名)" },
   ],
 

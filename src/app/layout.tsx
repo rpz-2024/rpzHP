@@ -40,12 +40,12 @@ const serif = Noto_Serif_JP({
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "RPZ",
-  description:
-    "生成りの空間で味わう季節の料理とお酒。落ち着いた和のひとときをお楽しみください。",
-  icons: { icon: "/favicon.ico" },
-  alternates: { canonical: "/" },
+	metadataBase: new URL(SITE_URL),
+	title: "株式会社RPZ | 京都から特別な体験を届ける飲食ブランド",
+	description:
+		"株式会社RPZは京都を拠点に「蒸とアテ ふぅふぅ」など独自ブランドを展開し、特別な体験をお届けする飲食企業です。素材を活かした料理と落ち着いた空間で特別な時間をお楽しみください。",
+	icons: { icon: "/favicon.ico" },
+	alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
