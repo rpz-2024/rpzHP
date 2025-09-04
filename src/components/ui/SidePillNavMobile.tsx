@@ -26,7 +26,7 @@ export function SidePillNavMobile(): ReactElement {
       if (e.key === "Escape") setIsOpen(false);
       if (e.key === "Tab" && panelRef.current) {
         const focusable = panelRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], [tabindex]:not([tabindex="-1"])',
+          'button, [href], [tabindex]:not([tabindex="-1"])'
         );
         if (focusable.length === 0) return;
         const first = focusable[0];
@@ -42,13 +42,13 @@ export function SidePillNavMobile(): ReactElement {
     };
     window.addEventListener("keydown", onKey);
     window.dispatchEvent(
-      new CustomEvent("mobile-menu-open-changed", { detail: true }),
+      new CustomEvent("mobile-menu-open-changed", { detail: true })
     );
     return () => {
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
       window.dispatchEvent(
-        new CustomEvent("mobile-menu-open-changed", { detail: false }),
+        new CustomEvent("mobile-menu-open-changed", { detail: false })
       );
       clearTimeout(t);
     };
@@ -59,7 +59,7 @@ export function SidePillNavMobile(): ReactElement {
     // フォーカスをトリガーボタンに戻す
     setTimeout(() => {
       const trigger = document.getElementById(
-        "mobile-menu-trigger",
+        "mobile-menu-trigger"
       ) as HTMLButtonElement | null;
       if (trigger) {
         trigger.focus();
@@ -72,7 +72,7 @@ export function SidePillNavMobile(): ReactElement {
     // フォーカスをトリガーボタンに戻す
     setTimeout(() => {
       const trigger = document.getElementById(
-        "mobile-menu-trigger",
+        "mobile-menu-trigger"
       ) as HTMLButtonElement | null;
       if (trigger) {
         trigger.focus();

@@ -1,5 +1,16 @@
 import type { FieldErrors, UseFormRegister } from "react-hook-form";
-import type { ContactFormData } from "@/lib/ validations";
+
+// Zod schema inference type (ContactFormDataから分離)
+export type ContactFormData = {
+  name: string;
+  furigana?: string;
+  phone: string;
+  email: string;
+  inquiryTypes: string[];
+  content: string;
+  privacyAgreement: boolean;
+  website?: string; // honeypot field
+};
 
 export type InquiryTypeOption = {
   value: string;
