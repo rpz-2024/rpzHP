@@ -1,6 +1,6 @@
 export type News = {
-	id: string;
-	title: string;
-	body?: string;
-	date?: string;
+  id: string;
+  title: string;
+  body?: string;
+  date?: string;
 };
