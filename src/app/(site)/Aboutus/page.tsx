@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AboutusSection } from "@/components/sections/Aboutus";
+import { AboutusSection } from "@/components/sections/aboutus";
 
 export const metadata: Metadata = {
 	title: "RPZの想い｜株式会社RPZ",
