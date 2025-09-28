@@ -1,11 +1,12 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   experimental: { typedRoutes: true },
 
   async redirects() {
-    const redirects = [
-      // 大文字→小文字
+    return [
+      // 大文字 → 小文字
       { source: "/Aboutus", destination: "/aboutus", permanent: true },
       { source: "/AboutUs", destination: "/aboutus", permanent: true },
       { source: "/ABOUTUS", destination: "/aboutus", permanent: true },
@@ -26,18 +27,6 @@ const nextConfig = {
       // 旧 index.html
       { source: "/index.html", destination: "/", permanent: true },
     ];
-
-    // ★ 本番環境だけで www → apex リダイレクト
-    if (process.env.VERCEL_ENV === "production") {
-      redirects.push({
-        source: "/:path*",
-        has: [{ type: "host", value: "www.rpz.jp" }],
-        destination: "https://rpz.jp/:path*",
-        permanent: true,
-      });
-    }
-
-    return redirects;
   },
 };
 
