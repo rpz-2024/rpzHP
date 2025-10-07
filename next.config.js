@@ -4,27 +4,22 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: { typedRoutes: true },
 
+  // 末尾スラッシュは付けない運用（/aboutus/ → /aboutus は Next の既定挙動に任せる）
+  trailingSlash: false,
+
   async redirects() {
     return [
-      // 大文字 → 小文字
+      // 大文字 → 小文字（片方向のみ）
       { source: "/Aboutus", destination: "/aboutus", permanent: true },
       { source: "/AboutUs", destination: "/aboutus", permanent: true },
       { source: "/ABOUTUS", destination: "/aboutus", permanent: true },
       { source: "/News", destination: "/news", permanent: true },
 
-      // 旧パス保険
+      // 旧パス保険（/about → /aboutus だけ残す）
       { source: "/about", destination: "/aboutus", permanent: true },
       { source: "/About", destination: "/aboutus", permanent: true },
 
-      // 末尾スラッシュ統一
-      { source: "/aboutus/", destination: "/aboutus", permanent: true },
-      { source: "/company/", destination: "/company", permanent: true },
-      { source: "/careers/", destination: "/careers", permanent: true },
-      { source: "/brands/", destination: "/brands", permanent: true },
-      { source: "/contact/", destination: "/contact", permanent: true },
-      { source: "/news/", destination: "/news", permanent: true },
-
-      // 旧 index.html
+      // 旧 index.html の片付け
       { source: "/index.html", destination: "/", permanent: true },
     ];
   },
