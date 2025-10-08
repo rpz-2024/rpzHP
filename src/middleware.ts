@@ -1,16 +1,8 @@
 // src/middleware.ts
-import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server';
 
-export const config = {
-  matcher: ['/aboutus', '/aboutus/'], // /aboutus のみ対象
-}
+export const config = { matcher: ['/aboutus', '/aboutus/'] };
 
-export default function middleware(req: NextRequest) {
-  // req を使用して ESLint の警告を回避
-  void req
-
-  return new Response('aboutus middleware bypass OK', {
-    status: 200,
-    headers: { 'Content-Type': 'text/plain' },
-  })
+export default function middleware() {
+  return NextResponse.next(); // そのままページへ通す
 }
