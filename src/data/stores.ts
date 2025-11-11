@@ -35,7 +35,7 @@ export const store: Store[] = [
     hours: "月～金: 17:00～23:00\n土、日、祝日: 16:00～23:00",
     tel: "0564-64-6004",
     instagram: "https://www.instagram.com/fufu_mushitoate_okazaki",
-    hotpepper: "https://www.hotpepper.jp/",
+    hotpepper: "https://www.hotpepper.jp/strJ003894029/",
   },
   {
     id: "toyota",
@@ -48,7 +48,7 @@ export const store: Store[] = [
       "月〜木:17:00〜23:00\n金:17:00〜0:00\n土:16:00〜0:00\n日・祝:16:00〜23:00",
     tel: "0565-47-7570",
     instagram: "https://www.instagram.com/fufu_mushitoate_toyota",
-    // hotpepper: "https://www.hotpepper.jp/",
+    hotpepper: "https://www.hotpepper.jp/strJ004422094/",
   },
   {
     id: "teppan",
@@ -71,7 +71,7 @@ export const store: Store[] = [
     address: "京都府京都市中京区笹屋町446 井上ビル 1F・2F",
     hours: "16:00～23:00",
     tel: "075-744-1200",
-    // instagram: "https://www.instagram.com/fufu_tepantoate",
-    // hotpepper: "https://www.hotpepper.jp/strJ003873030/",
+    instagram: "https://www.instagram.com/jokigen_karasuma",
+    hotpepper: "https://www.hotpepper.jp/strJ004422060/",
   },
 ];
