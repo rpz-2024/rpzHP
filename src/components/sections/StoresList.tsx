@@ -50,9 +50,18 @@ export function StoresList(): ReactElement {
                 <h3 className="mb-2 text-2xl md:text-3xl font-extrabold text-stone-800">
                   {storeItem.name}
                 </h3>
-                <p className="text-red-600 font-bold leading-relaxed mb-4 whitespace-pre-line">
-                  {storeItem.description}
+                <p className="text-red-600 font-bold leading-relaxed mb-4">
+                  {storeItem.description.split("\n").map((line, index) => (
+                    <span
+                      key={index}
+                      className={`block ${index === 1 ? "text-[0.95em]" : ""
+                        }`}
+                    >
+                      {line}
+                    </span>
+                  ))}
                 </p>
+
 
 
                 <dl className="space-y-1 text-stone-700 text-base md:text-lg">
