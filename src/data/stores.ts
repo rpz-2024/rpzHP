@@ -42,7 +42,7 @@ export const store: Store[] = [
     name: "鉄板スタンド酒場 ぽくぽーく",
     area: "四条烏丸",
     image: "/images/poku_stand_logo.jpg",
-    description: "【鉄板料理×大衆価格】\n レモンサワー100円ハイボール199円生ビール299円アテ299円~",
+    description: "【鉄板料理×大衆価格】\nレモンサワー100円ハイボール199円生ビール299円アテ299円~",
     address: "京都市中京区元法然寺町６８５ ウィステリアビル 2階",
     hours: "16:00～23:30",
     tel: "075-746-3266",
