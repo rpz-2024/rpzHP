@@ -50,9 +50,10 @@ export function StoresList(): ReactElement {
                 <h3 className="mb-2 text-2xl md:text-3xl font-extrabold text-stone-800">
                   {storeItem.name}
                 </h3>
-                <p className="text-red-600 font-bold leading-relaxed mb-4">
+                <p className="text-red-600 font-bold leading-relaxed mb-4 whitespace-pre-line">
                   {storeItem.description}
                 </p>
+
 
                 <dl className="space-y-1 text-stone-700 text-base md:text-lg">
                   <div>
