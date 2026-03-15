@@ -1,71 +1,66 @@
-"use client";
+import Link from "next/link";
+import type { NewsArticle } from "@/types/news";
 
-import type { ReactElement } from "react";
-import { useState } from "react";
+type NewsAccordionProps = {
+  items?: NewsArticle[];
+  title?: string;
+};
 
-import { SectionRailTitle } from "@/components/ui/SectionRailTitle";
-import { news } from "@/data/news";
+const getBadgeClassName = (category: string) => {
+  switch (category) {
+    case "ニュース":
+      return "bg-blue-600 text-white";
+    case "イベント":
+      return "bg-orange-500 text-white";
+    case "お知らせ":
+      return "bg-emerald-500 text-white";
+    case "採用":
+      return "bg-rose-500 text-white";
+    default:
+      return "bg-stone-700 text-white";
+  }
+};
 
-export function NewsAccordion(): ReactElement {
-  const [openId, setOpenId] = useState<string | null>(null);
-
+export function NewsAccordion({
+  items = [],
+  title = "ニュース",
+}: NewsAccordionProps) {
   return (
-    <section className="lg:contents">
-      {/* PC: 左の縦レール見出し */}
-      <div className="hidden lg:block lg:col-start-2">
-        <SectionRailTitle>ニュース</SectionRailTitle>
-      </div>
-
-      {/* 本体 */}
-      <div
-        id="news"
-        className="lg:col-start-3 py-12 scroll-mt-28 lg:scroll-mt-32 relative z-10"
-      >
-        {/* SP/Tablet: 横見出し */}
-        <div className="lg:hidden block text-red-700 font-pixel text-2xl md:text-3xl mt-6 mb-3">
-          ニュース
+    <section className="w-full bg-stone-50 py-16 md:py-24">
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
+        <div className="mb-12 text-center md:mb-16">
+          <h2 className="text-4xl font-bold tracking-[0.12em] text-red-600 md:text-5xl">
+            {title}
+          </h2>
         </div>
 
-        <ul className="divide-y divide-stone-200">
-          {news.map((newsItem) => {
-            const isOpen = openId === newsItem.id;
-            const isHeading =
-              newsItem.title === "会社沿革" || newsItem.title.endsWith("年");
-            return (
-              <li key={newsItem.id}>
-                {isHeading ? (
-                  <h3 className="px-5 py-3 text-stone-800 font-extrabold leading-tight text-lg md:text-xl">
-                    {newsItem.title}
-                  </h3>
-                ) : (
-                  <>
-                    <button
-                      type="button"
-                      aria-expanded={isOpen}
-                      onClick={() => setOpenId(isOpen ? null : newsItem.id)}
-                      className="w-full text-left px-5 py-4 cursor-pointer hover:bg-stone-100/60 focus-visible:outline-2 focus-visible:outline-red/60 flex items-center justify-between"
-                    >
-                      <span className="text-base md:text-lg font-semibold">
-                        {newsItem.title}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="ml-4 text-stone-400 text-xl leading-none"
-                      >
-                        {isOpen ? "ー" : "＋"}
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <div className="px-5 pb-5 text-sm text-stone-700">
-                        {newsItem.body ?? "詳細は準備中です。"}
-                      </div>
-                    )}
-                  </>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="border-t border-stone-300">
+          {items.map((item) => (
+            <Link
+              key={item.id}
+              href={`/news/${item.slug}`}
+              className="grid items-center gap-3 border-b border-stone-300 py-5 transition-colors duration-200 hover:bg-stone-100 md:grid-cols-[120px_110px_1fr] md:gap-6 md:py-7"
+            >
+              <div className="text-sm font-medium text-stone-500 md:text-base">
+                {item.date}
+              </div>
+
+              <div>
+                <span
+                  className={`inline-flex min-w-[84px] items-center justify-center rounded-full px-3 py-1 text-xs font-bold tracking-wide ${getBadgeClassName(
+                    item.category
+                  )}`}
+                >
+                  {item.category}
+                </span>
+              </div>
+
+              <div className="text-sm font-semibold leading-7 text-stone-900 md:text-base">
+                {item.title}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
