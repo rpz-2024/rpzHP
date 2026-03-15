@@ -66,10 +66,10 @@ export const news: NewsArticle[] = [
   {
     id: "2025-08-19",
     slug: "fufu-rokkaku-yastutomo-tv",
-    title: "『蒸とアテふぅふぅ 四条烏丸店』やすとも・友近のキメツケ!に登場しました",
+    title: "『蒸とアテふぅふぅ 烏丸六角店』やすとも・友近のキメツケ!に登場しました",
     date: "2025/6/18",
     category: "お知らせ",
-    excerpt: "『蒸とアテふぅふぅ 四条烏丸店』やすとも・友近のキメツケ!に登場しました。",
+    excerpt: "『蒸とアテふぅふぅ 烏丸六角店』やすとも・友近のキメツケ!に登場しました。",
     heroImage: "/images/news/1600x900.png",
     contentHtml: `
     `,
