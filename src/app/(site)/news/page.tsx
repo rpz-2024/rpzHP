@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { NewsAccordion } from "@/components/sections/NewsAccordion";
-import { getNewsPage, getTotalNewsPages } from "@/data/news";
+import { getWpNewsPage, getWpTotalNewsPages } from "@/lib/wordpress-news";
 
 type NewsPageProps = {
 	searchParams: Promise<{
@@ -17,7 +17,9 @@ export const metadata: Metadata = {
 export default async function NewsPage({ searchParams }: NewsPageProps) {
 	const resolvedSearchParams = await searchParams;
 	const rawPage = Number(resolvedSearchParams.page ?? "1");
-	const totalPages = getTotalNewsPages();
+
+	const fetchedTotalPages = await getWpTotalNewsPages();
+	const totalPages = Math.max(fetchedTotalPages, 1);
 
 	const currentPage =
 		Number.isNaN(rawPage) || rawPage < 1
@@ -26,7 +28,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
 				? totalPages
 				: rawPage;
 
-	const currentItems = getNewsPage(currentPage);
+	const { items: currentItems } = await getWpNewsPage(currentPage, 10);
 
 	return (
 		<main className="w-full bg-stone-50">
@@ -44,8 +46,8 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
 									key={pageNumber}
 									href={`/news?page=${pageNumber}`}
 									className={`inline-flex h-10 min-w-10 items-center justify-center rounded-full border px-4 text-sm font-bold transition ${isActive
-											? "border-red-600 bg-red-600 text-white"
-											: "border-stone-300 bg-white text-stone-700 hover:border-stone-900 hover:text-stone-900"
+										? "border-red-600 bg-red-600 text-white"
+										: "border-stone-300 bg-white text-stone-700 hover:border-stone-900 hover:text-stone-900"
 										}`}
 								>
 									{pageNumber}
