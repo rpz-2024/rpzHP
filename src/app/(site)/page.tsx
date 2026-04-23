@@ -3,7 +3,7 @@ import { FloatingTopButton } from "@/components/sections/FloatingTopButton";
 import { Hero } from "@/components/sections/Hero";
 import { NewsAccordion } from "@/components/sections/NewsAccordion";
 import { StoresList } from "@/components/sections/StoresList";
-import { latestNews } from "@/data/news";
+import { getLatestWpNews } from "@/lib/wordpress-news";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +13,9 @@ export const metadata: Metadata = {
 	alternates: { canonical: "/" },
 };
 
-export default function Page() {
+export default async function Page() {
+	const latestNews = await getLatestWpNews(3);
+
 	return (
 		<main className="w-full bg-stone-50">
 			<section className="w-full">

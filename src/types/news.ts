@@ -8,3 +8,5 @@ export type NewsArticle = {
   heroImage?: string;
   contentHtml: string;
 };
+
+export type News = NewsArticle;

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getNewsBySlug, sortedNews } from "@/data/news";
+import { getAllWpNewsSlugs, getWpNewsBySlug } from "@/lib/wordpress-news";
 
 type NewsDetailPageProps = {
   params: Promise<{
@@ -11,8 +11,10 @@ type NewsDetailPageProps = {
 };
 
 export async function generateStaticParams() {
-  return sortedNews.map((item) => ({
-    slug: item.slug,
+  const slugs = await getAllWpNewsSlugs();
+
+  return slugs.map((slug) => ({
+    slug,
   }));
 }
 
@@ -20,7 +22,7 @@ export async function generateMetadata({
   params,
 }: NewsDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getNewsBySlug(slug);
+  const article = await getWpNewsBySlug(slug);
 
   if (!article) {
     return {
@@ -39,7 +41,7 @@ export default async function NewsDetailPage({
   params,
 }: NewsDetailPageProps) {
   const { slug } = await params;
-  const article = getNewsBySlug(slug);
+  const article = await getWpNewsBySlug(slug);
 
   if (!article) {
     notFound();
