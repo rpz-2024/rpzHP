@@ -86,7 +86,43 @@ export default async function NewsDetailPage({
         )}
 
         <div
-          className="prose prose-stone max-w-none prose-headings:mt-10 prose-headings:mb-4 prose-p:leading-8"
+          className="
+            max-w-none text-stone-800
+            [&_p]:mb-6
+            [&_p]:text-[18px]
+            [&_p]:leading-[2]
+            md:[&_p]:text-[19px]
+            md:[&_p]:leading-[2.1]
+            [&_strong]:font-bold
+            [&_a]:text-red-600
+            [&_a]:underline
+            [&_a]:underline-offset-4
+            hover:[&_a]:text-red-700
+            [&_h2]:mt-12
+            [&_h2]:mb-4
+            [&_h2]:text-2xl
+            [&_h2]:font-bold
+            [&_h2]:leading-tight
+            md:[&_h2]:text-3xl
+            [&_h3]:mt-10
+            [&_h3]:mb-3
+            [&_h3]:text-xl
+            [&_h3]:font-bold
+            md:[&_h3]:text-2xl
+            [&_ul]:my-6
+            [&_ul]:list-disc
+            [&_ul]:pl-6
+            [&_ol]:my-6
+            [&_ol]:list-decimal
+            [&_ol]:pl-6
+            [&_li]:mb-2
+            [&_li]:text-[18px]
+            [&_li]:leading-[2]
+            md:[&_li]:text-[19px]
+            md:[&_li]:leading-[2.1]
+            [&_img]:my-8
+            [&_img]:rounded-2xl
+          "
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
         />
       </article>
