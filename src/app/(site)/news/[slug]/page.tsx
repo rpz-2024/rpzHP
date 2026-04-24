@@ -71,12 +71,6 @@ export default async function NewsDetailPage({
           <h1 className="text-3xl font-bold leading-tight text-stone-900 md:text-5xl md:leading-tight">
             {article.title}
           </h1>
-
-          {article.excerpt && (
-            <p className="mt-6 text-base leading-8 text-stone-600 md:text-lg">
-              {article.excerpt}
-            </p>
-          )}
         </div>
 
         {article.heroImage && (
