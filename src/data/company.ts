@@ -28,10 +28,5 @@ export const COMPANY_CONTENT: CompanyContent = {
     { year: "2025", month: "09", text: "蒸キゲン〜jokigen〜烏丸御池店オープン" },
     { year: "2026", month: "02", text: "蒸キゲン〜jokigen〜豊田店(FC)オープン" },
     { year: "2026", month: "02", text: "鉄板スタンド酒場 ぽくぽーくオープン" },
-    {
-      year: "2025",
-      month: "09",
-      text: "蒸キゲン〜jokigen〜烏丸御池店オープン",
-    },
   ],
 };
