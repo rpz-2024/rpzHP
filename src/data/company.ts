@@ -25,6 +25,9 @@ export const COMPANY_CONTENT: CompanyContent = {
     { year: "2024", month: "10", text: "蒸とアテふぅふぅ東岡崎店(FC)オープン" },
     { year: "2025", month: "03", text: "蒸とアテふぅふぅ烏丸六角店オープン" },
     { year: "2025", month: "08", text: "蒸とアテふぅふぅ豊田店(FC)オープン" },
+    { year: "2025", month: "09", text: "蒸キゲン〜jokigen〜烏丸御池店オープン" },
+    { year: "2026", month: "02", text: "蒸キゲン〜jokigen〜豊田店(FC)オープン" },
+    { year: "2026", month: "02", text: "鉄板スタンド酒場 ぽくぽーくオープン" },
     {
       year: "2025",
       month: "09",
