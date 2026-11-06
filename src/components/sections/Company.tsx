@@ -46,15 +46,24 @@ const HistoryBlock = () => {
     <section>
       <SectionTitle>{COMPANY_CONTENT.historyTitle ?? "沿革"}</SectionTitle>
       <Card className="mt-4">
-        <ol className="relative border-l border-neutral-200 pl-4 md:pl-6">
+        <ol className="min-w-0 border-l border-neutral-200 pl-5 text-left sm:pl-7">
           {COMPANY_CONTENT.history.map((h, i) => (
-            <li key={i} className="ml-2 py-3">
-              <div className="absolute -left-[6px] mt-2 h-3 w-3 rounded-full bg-neutral-300" />
-              <div className="text-sm text-neutral-500">
+            <li
+              key={i}
+              className="group relative grid min-w-0 gap-2 border-b border-neutral-100 py-5 first:pt-0 last:border-b-0 last:pb-0 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-6"
+            >
+              <div aria-hidden="true" className="absolute -left-[26px] top-6 h-3 w-3 rounded-full border-2 border-white bg-red-700 group-first:top-1 sm:-left-[34px]" />
+              <div className="pt-0.5 text-sm font-semibold tabular-nums leading-7 text-neutral-500">
                 {h.year}
                 {h.month ? `.${h.month}` : ""}
               </div>
-              <div className="font-medium text-neutral-900">{h.text}</div>
+              <p className="min-w-0 font-medium leading-8 text-neutral-900 [overflow-wrap:anywhere]">
+                {h.text.split(/(?<=,)/u).map((part, index) => (
+                  <span key={index} className="mr-2 inline-block max-w-full align-top last:mr-0">
+                    {part}
+                  </span>
+                ))}
+              </p>
             </li>
           ))}
         </ol>
@@ -66,7 +75,7 @@ const HistoryBlock = () => {
 export function CompanySection() {
   const c = COMPANY_CONTENT;
   return (
-    <div className="space-y-10 md:space-y-12">
+    <div className="min-w-0 space-y-10 md:space-y-12">
       {/* Hero */}
       <header>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">

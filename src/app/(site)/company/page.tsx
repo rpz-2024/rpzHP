@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-[60vh] grid place-items-center py-16">
-      <div className="text-center">
+    <main className="min-h-[60vh] w-full min-w-0 py-12 md:py-16">
+      <div className="mx-auto w-full max-w-4xl text-center">
         <CompanySection />
       </div>
     </main>

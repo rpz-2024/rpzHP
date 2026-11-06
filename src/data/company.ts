@@ -13,8 +13,8 @@ export const COMPANY_CONTENT: CompanyContent = {
     { label: "資本金", value: "200万円" },
     { label: "事業内容", value: "飲食店の経営\nコンサルティング事業" },
     { label: "決算期", value: "3月末日" },
-    { label: "店舗数", value: "直営 : 3ブランド4店舗\nFC : 1ブランド2店舗" },
-    { label: "従業員数", value: "80名(正社員7名)" },
+    { label: "店舗数", value: "直営 : 10ブランド14店舗\n" },
+    { label: "従業員数", value: "200名(正社員30名)" },
   ],
 
   historyTitle: "沿革",
@@ -28,5 +28,7 @@ export const COMPANY_CONTENT: CompanyContent = {
     { year: "2025", month: "09", text: "蒸キゲン〜jokigen〜烏丸御池店オープン" },
     { year: "2026", month: "02", text: "蒸キゲン〜jokigen〜豊田店(FC)オープン" },
     { year: "2026", month: "02", text: "鉄板スタンド酒場 ぽくぽーくオープン" },
+    { year: "2026", month: "07", text: "餃子とどて煮 うさぎ屋,優十不断,百圓寿司スタンド えにし,てんぷぅ 天ぷらとアテとワイン,accent,魚と7 〜ととせぶん〜,点心爛漫 運営開始" },
+    
   ],
 };
