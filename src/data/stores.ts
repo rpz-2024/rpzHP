@@ -54,7 +54,7 @@ export const store: Store[] = [
     id: "tenshin_ranman",
     name: "点心爛漫",
     area: "四条烏丸",
-    image: "/images/brand img/tenshin_ranman.svg",
+    image: "/images/brand img/tenshin_ranman.jpg",
     description: "点心とワインを気軽に楽しめる、四条烏丸の点心バル。",
     address: "京都市中京区高倉通蛸薬師上ル和久屋町360",
     hours: "15:00〜24:00",
